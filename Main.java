@@ -4,6 +4,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        method1();
+      //  method2();
+
+        System.out.println("End of program");
+
+    }
+
+     public static void method1() {
+        System.out.println("--- Method 1 Start ---");
+        method2();
+        System.out.println("--- Method 1 End ---");
+     }
+
+    public static void method2() {
+        System.out.println("--- Method 2 Start ---");
         Scanner Scan = new Scanner(System.in);
 
         try {
@@ -12,12 +28,12 @@ public class Main {
             System.out.println(vect[position]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid Position! ");
-        }catch(InputMismatchException e){
+            e.printStackTrace();
+            Scan.next();
+        } catch (InputMismatchException e) {
             System.out.println("Input Erro!");
         }
-
-        System.out.println("End of program");
-
         Scan.close();
+        System.out.println("--- Method 2 End ---");
     }
 }
